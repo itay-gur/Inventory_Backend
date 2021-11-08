@@ -1,4 +1,5 @@
 {
   "dbUser": "inventory_backend_dbUser",
-  "dbUserPassword": "inventory_backend_dbUserPassword"
+  "dbUserPassword": "inventory_backend_dbUserPassword",
+  "jwtPrivateKey": "inventory_backend_jwtPrivateKey"
 }

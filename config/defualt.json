@@ -1,4 +1,5 @@
 {
   "dbUser": "",
-  "dbUserPassword": ""
+  "dbUserPassword": "",
+  "jwtPrivateKey": ""
 }

@@ -3,11 +3,19 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
+const users = require("./routes/users");
+
 const DB_USER = "dbUser";
 const DB_PASSWORD = "dbUserPassword";
+const JWT_PRIVATE_KEY = "jwtPrivateKey";
 
 if (!config.get(DB_USER) || !config.get(DB_PASSWORD)) {
   console.log("FATAL ERROR: atlas credentials is not defined.");
+  process.exit(1);
+}
+
+if (!config.get(JWT_PRIVATE_KEY)) {
+  console.log("FATAL ERROR: jwt key is not defined.");
   process.exit(1);
 }
 
@@ -46,6 +54,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
