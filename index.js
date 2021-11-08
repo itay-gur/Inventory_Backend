@@ -33,7 +33,7 @@ const connectToAtlas = async () => {
   await mongoose.connect(
     `mongodb+srv://${config.get(DB_USER)}:${config.get(
       DB_PASSWORD
-    )}@cluster0.liccp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+    )}@cluster0.liccp.mongodb.net/Inventory?retryWrites=true&w=majority`
   );
   console.log("Connected to atlas ...");
 };
